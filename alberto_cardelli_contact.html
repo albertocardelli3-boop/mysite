@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alberto Cardelli | MSc Mechanical Engineer</title>
+  <meta name="description" content="Contact page of Alberto Cardelli, MSc Mechanical Engineer specialised in FEM/FEA, CAE and dynamic simulation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-50:  #e8f1fd;
+      --blue-100: #c3d9f9;
+      --blue-500: #2563eb;
+      --blue-600: #1d4ed8;
+      --blue-700: #1e40af;
+      --gray-50:  #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-400: #94a3b8;
+      --gray-600: #475569;
+      --gray-800: #1e293b;
+      --gray-900: #0f172a;
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-900);
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 32px 16px 48px;
+    }
+
+    .card {
+      width: min(860px, 100%);
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #eef6ff 0%, #dbeafe 100%);
+      padding: 40px 36px 32px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .avatar {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--blue-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 1px var(--blue-100);
+    }
+
+    .hero-text { flex: 1; min-width: 0; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .03em;
+      margin-bottom: 12px;
+    }
+
+    .badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #16a34a;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: .4; }
+    }
+
+    h1 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--gray-900);
+      margin-bottom: 6px;
+    }
+
+    .role {
+      font-size: clamp(15px, 2vw, 18px);
+      font-weight: 600;
+      color: var(--blue-600);
+      margin-bottom: 14px;
+    }
+
+    .summary {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--gray-600);
+      max-width: 620px;
+    }
+
+    /* ── BODY GRID ── */
+    .body {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 0;
+    }
+
+    .col {
+      padding: 28px 28px 32px;
+    }
+
+    .col + .col {
+      border-left: 1px solid var(--gray-200);
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--blue-600);
+      margin-bottom: 16px;
+    }
+
+    /* ── CONTACT ITEMS ── */
+    .contact-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 15px;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      background: var(--gray-50);
+      transition: border-color .15s;
+    }
+
+    .contact-item:hover { border-color: var(--blue-100); }
+
+    .contact-icon {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--blue-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-icon svg { width: 16px; height: 16px; stroke: var(--blue-600); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .contact-info { flex: 1; min-width: 0; }
+
+    .contact-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 2px;
+    }
+
+    .contact-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-800);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .contact-value a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-value a:hover { color: var(--blue-600); }
+
+    .copy-btn {
+      flex-shrink: 0;
+      padding: 5px 10px;
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      background: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: all .12s;
+    }
+
+    .copy-btn:hover {
+      background: var(--blue-50);
+      border-color: var(--blue-100);
+      color: var(--blue-600);
+    }
+
+    .copy-btn.copied {
+      background: #dcfce7;
+      border-color: #bbf7d0;
+      color: #166534;
+    }
+
+    /* ── ACTIONS ── */
+    .actions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .1s, opacity .1s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-1px); opacity: .93; }
+
+    .btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    .btn-primary {
+      background: var(--blue-500);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: var(--blue-50);
+      color: var(--blue-700);
+      border: 1px solid var(--blue-100);
+    }
+
+    .btn-ghost {
+      background: var(--gray-100);
+      color: var(--gray-700, var(--gray-800));
+      border: 1px solid var(--gray-200);
+    }
+
+    /* ── SKILLS PILLS ── */
+    .skills-preview {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--blue-50);
+      border: 1px solid var(--blue-100);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue-700);
+    }
+
+    /* ── NOTE ── */
+    .note {
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: var(--gray-600);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 14px 36px;
+      border-top: 1px solid var(--gray-200);
+      background: var(--gray-50);
+      font-size: 12px;
+      color: var(--gray-400);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer a { color: var(--blue-600); text-decoration: none; font-weight: 500; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .hero { padding: 28px 20px 24px; }
+      .hero-inner { flex-direction: row; }
+      .avatar { width: 56px; height: 56px; font-size: 17px; }
+      .body { grid-template-columns: 1fr; }
+      .col + .col { border-left: none; border-top: 1px solid var(--gray-200); }
+      .col { padding: 22px 20px 24px; }
+      .footer { padding: 14px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="avatar" aria-hidden="true">AC</div>
+        <div class="hero-text">
+          <div class="badge">Open to opportunities</div>
+          <h1>Alberto Cardelli</h1>
+          <p class="role">MSc Mechanical Engineer</p>
+          <p class="summary">
+            Specialised in <strong>FEM/FEA</strong>, dynamic simulation, and CAE-driven development.
+            Background in structural mechanics and engineering documentation.
+            Based in Turin, Italy — available for junior or graduate roles in structural analysis,
+            CAE, or mechanical design.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <div class="body">
+
+      <!-- LEFT — contacts -->
+      <div class="col">
+        <p class="section-label">Direct contacts</p>
+        <div class="contact-list">
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div class="contact-info">
+              <div class="contact-label">Phone</div>
+              <div class="contact-value"><a href="tel:+393476713177">+39 347 671 3177</a></div>
+            </div>
+            <button class="copy-btn" data-copy="+393476713177">Copy</button>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-info">
+              <div class="contact-label">Email</div>
+              <div class="contact-value"><a href="mailto:albertocardelli3@gmail.com">albertocardelli3@gmail.com</a></div>
+            </div>
+            <button class="copy-btn" data-copy="albertocardelli3@gmail.com">Copy</button>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div class="contact-info">
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value"><a href="https://www.linkedin.com/in/alberto-cardelli" target="_blank" rel="noopener">linkedin.com/in/alberto-cardelli</a></div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-info">
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Turin, Italy</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Skills preview -->
+        <div class="skills-preview">
+          <p class="section-label">Core skills</p>
+          <div class="pills">
+            <span class="pill">FEM / FEA</span>
+            <span class="pill">Ansys APDL</span>
+            <span class="pill">MATLAB</span>
+            <span class="pill">Autodesk Adams</span>
+            <span class="pill">SolidWorks</span>
+            <span class="pill">Dynamic analysis</span>
+            <span class="pill">Python</span>
+            <span class="pill">GD&amp;T</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — actions -->
+      <div class="col">
+        <p class="section-label">Quick actions</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+393476713177">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call now
+          </a>
+          <a class="btn btn-primary" href="mailto:albertocardelli3@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Send email
+          </a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/alberto-cardelli" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            Open LinkedIn
+          </a>
+          <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1m54GpXz0I7peIZ3NJbMqhm1DBDsPlWE2?usp=drive_link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+            View portfolio
+          </a>
+        </div>
+
+        <div class="note">
+          This page is designed to be linked from a QR code on a CV or business card.
+          Publish it at a short, stable URL and generate the QR from that link for best results.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span>Alberto Cardelli &mdash; MSc Mechanical Engineer &mdash; Turin, IT</span>
+      <a href="https://drive.google.com/drive/folders/1m54GpXz0I7peIZ3NJbMqhm1DBDsPlWE2?usp=drive_link" target="_blank" rel="noopener">Technical Portfolio &rarr;</a>
+    </footer>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.dataset.copy;
+        navigator.clipboard.writeText(text).then(() => {
+          const original = btn.textContent;
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.classList.remove('copied');
+          }, 1800);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
